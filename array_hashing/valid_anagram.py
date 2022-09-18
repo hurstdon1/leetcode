@@ -6,9 +6,11 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
+        # Create dictionary for both strings
         sd = {}
         td = {}
 
+        # Loop over strings and count frequency of characters
         for c in s:
             if c not in sd:
                 sd[c] = 1
@@ -21,21 +23,12 @@ class Solution:
             else:
                 td[c] += 1
 
+        # If the dictionaries are the same, return true. Else, return false
         if sd == td:
             return True
-
         else:
             return False
 
-
-# Example 1:
-
-# Input: s = "anagram", t = "nagaram"
-# Output: true
-# Example 2:
-
-# Input: s = "rat", t = "car"
-# Output: false
 
 # Test Cases
 sol = Solution()

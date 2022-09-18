@@ -5,8 +5,10 @@ from typing import List
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
+        # Instantiate a dictionary
         d = {}
 
+        # Loop over the list of numbers. Return true if any appears more than once
         for val in nums:
 
             if val not in d:
@@ -18,23 +20,7 @@ class Solution:
         return False
 
 
-
-
-
-
-# Example 1:
-
-# Input: nums = [1,2,3,1]
-# Output: true
-# Example 2:
-
-# Input: nums = [1,2,3,4]
-# Output: false
-# Example 3:
-
-# Input: nums = [1,1,1,3,3,4,3,2,4,2]
-# Output: true
-
+# Test Cases
 sol = Solution()
 print(sol.containsDuplicate([1,2,3,1]))
 print(sol.containsDuplicate([1,2,3,4]))
