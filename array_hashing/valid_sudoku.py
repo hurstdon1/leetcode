@@ -14,17 +14,25 @@ from collections import defaultdict
 
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
+
+        # Create a set for row, column, and square
         row = defaultdict(set)
         col = defaultdict(set)
         square = defaultdict(set)
 
+        # for each row
         for r in range(9):
+            # for each column
             for c in range(9):
                 
+                # if the current board space is empty, continue
                 if board[r][c] == ".":
                     continue
                 
+                # if the current board value is in the current row
+                # of the current board value is in the current column
                 if (board[r][c] in row[r] or
+
                     board[r][c] in col[c] or
                     board[r][c] in square[(r//3, c//3)]):
                     return False
